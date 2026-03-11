@@ -52,9 +52,12 @@ PCA reduces the four transformed features to three components explaining ~99.8% 
 
 ## Clustering
 
-KMeans is evaluated for k=2 through k=8 using inertia, global silhouette score, Davies-Bouldin index, Calinski-Harabasz score, and per-cluster silhouette distributions. No single metric unanimously agrees on an optimal k, so the final choice integrates statistical evidence with business interpretability.
+KMeans is evaluated for k=2 through k=8 using inertia, global silhouette score, Davies-Bouldin index, Calinski-Harabasz score, and per-cluster silhouette distributions visualized as boxplots for each k.
 
-k=5 is selected. It wins two of three metrics against k=4 (Davies-Bouldin and Silhouette), and k=4 is further ruled out because it merges At-Risk High-Value and At-Risk Frequent into a single segment — two groups that differ critically in AOV (£426 vs £216) and require entirely different marketing strategies.
+No single metric unanimously agrees on an optimal k, so the final choice integrates statistical evidence with business interpretability.
+
+k=5 is selected. It wins two of three metrics against k=4 (Davies-Bouldin and Silhouette), and k=4 is further ruled out because it merges At-Risk High-Value and At-Risk Frequent into a single segment — two groups that differ critically in AOV (£426 vs £216) and require entirely different marketing strategies. Convergence is confirmed at 14 iterations; max_iter=50 is retained 
+as a safety margin.
 
 ---
 
